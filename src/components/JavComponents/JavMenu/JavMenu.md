@@ -1,0 +1,4 @@
+# Javmenu
+
+## Usage
+    <JavMenu />

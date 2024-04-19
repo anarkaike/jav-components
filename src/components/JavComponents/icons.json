@@ -1,0 +1,115 @@
+{
+  "add": "solar:add-circle-linear",
+  "close": "solar:backspace-broken",
+
+  "exit": "solar:exit-bold-duotone",
+  "exit_line": "solar:exit-line-duotone",
+  "price": "solar:dollar-line-duotone",
+  "doc": "system-uicons:document",
+
+  "card": "solar:card-2-broken",
+  "card_search": "solar:card-search-linear",
+  "chart": "solar:chart-2-bold-duotone",
+  "chart2": "solar:chart-bold-duotone",
+  "chart3": "solar:chart-square-line-duotone",
+
+  "favorite": "solar:heart-angle-outline",
+  "home": "solar:home-line-duotone",
+  "save": "solar:diskette-line-duotone",
+  "image": "solar:gallery-bold-duotone",
+  "video": "solar:videocamera-line-duotone",
+  "edit": "solar:pen-2-line-duotone",
+  "delete": "solar:trash-bin-minimalistic-line-duotone",
+  "upload": "solar:upload-line-duotone",
+  "text": "solar:text-square-line-duotone",
+  "share": "solar:share-line-duotone",
+  "settings": "solar:settings-line-duotone",
+  "refresh": "solar:refresh-line-duotone",
+  "qrcode": "solar:qr-code-line-duotone",
+  "book": "solar:notebook-minimalistic-broken",
+  "search": "solar:minimalistic-magnifer-line-duotone",
+  "dots": "solar:menu-dots-bold-duotone",
+  "maximize": "solar:maximize-square-2-line-duotone",
+
+  "login1": "solar:login-line-duotone",
+  "login2": "solar:login-3-line-duotone",
+  "login3": "solar:login-2-line-duotone",
+
+  "logout1": "solar:logout-line-duotone",
+  "logout2": "solar:logout-3-line-duotone",
+  "logout3": "solar:logout-2-line-duotone",
+
+  "star": "solar:star-bold",
+  "star_line": "solar:star-outline",
+
+  "undo_left": "solar:undo-left-line-duotone",
+  "undo_right": "solar:undo-right-line-duotone",
+
+  "list": "bi:list",
+  "list_enum": "bi:list-ol",
+  "list_dot": "tabler:list",
+  "list_up": "solar:list-up-broken",
+  "list_down": "solar:list-down-broken",
+
+  "calendar": "solar:calendar-broken",
+  "calendar_add": "calendar-add-outline",
+  "calendar_search": "calendar-search-linear",
+
+  "checklist": "solar:checklist-minimalistic-line-duotone",
+  "checklist2": "solar:checklist-bold-duotone",
+  "check_single": "check-read-line-duotone",
+  "check_doble": "solar:check-read-linear",
+
+  "eye_on": "eye-bold",
+  "eye_off": "eye-closed-line-duotone",
+  "eye_line_on": "eye-line-duotone",
+  "eye_line_off": "eye-closed-bold",
+
+  "arrow_doble_down": "solar:double-alt-arrow-down-line-duotone",
+  "arrow_doble_up": "solar:double-alt-arrow-up-line-duotone",
+  "arrow_doble_left": "solar:double-alt-arrow-left-line-duotone",
+  "arrow_doble_right": "solar:double-alt-arrow-right-line-duotone",
+
+  "arrow_doble_circle_down": "solar:round-double-alt-arrow-down-line-duotone",
+  "arrow_doble_circle_up": "solar:round-double-alt-arrow-up-line-duotone",
+  "arrow_doble_circle_left": "solar:round-double-alt-arrow-left-line-duotone",
+  "arrow_doble_circle_right": "solar:round-double-alt-arrow-right-line-duotone",
+
+  "arrow_down": "solar:arrow-down-line-duotone",
+  "arrow_up": "solar:arrow-up-line-duotone",
+  "arrow_left": "solar:arrow-left-line-duotone",
+  "arrow_right": "solar:arrow-right-line-duotone",
+
+  "arrow_circle_down": "solar:round-arrow-down-line-duotone",
+  "arrow_circle_up": "solar:round-arrow-up-line-duotone",
+  "arrow_circle_left": "solar:round-arrow-left-line-duotone",
+  "arrow_circle_right": "solar:round-arrow-right-line-duotone",
+
+  "arrow_circle_mini_down": "solar:round-alt-arrow-down-line-duotone",
+  "arrow_circle_mini_up": "solar:round-alt-arrow-up-line-duotone",
+  "arrow_circle_mini_left": "solar:round-alt-arrow-left-line-duotone",
+  "arrow_circle_mini_right": "solar:round-alt-arrow-right-line-duotone",
+
+  "fire": "fire-bold",
+  "fire_line": "fire-linear",
+  "fire2": "flame-bold",
+  "fire2_line": "flame-linear",
+
+  "danger": "danger-linear",
+  "chat": "solar:dialog-2-broken",
+  "key": "solar:key-line-duotone",
+  "lamp_on": "solar:lightbulb-bolt-bold",
+  "lamp_off": "solar:lightbulb-bolt-line-duotone",
+  "link": "solar:link-round-angle-line-duotone",
+  "lock_on": "solar:lock-password-bold-duotone",
+  "lock_off": "solar:lock-password-unlocked-bold-duotone",
+  "anexo": "solar:paperclip-2-line-duotone",
+  "prev": "solar:rewind-back-bold-duotone",
+  "next": "solar:rewind-forward-bold-duotone",
+
+  "user": "solar:user-bold-duotone",
+  "user_circle": "solar:user-circle-line-duotone",
+
+  "dashboard": "solar:widget-5-bold-duotone",
+  "dashboard_add": "solar:widget-add-bold-duotone"
+}
