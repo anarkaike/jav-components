@@ -35,8 +35,9 @@ defineOptions({
 </script>
 
 <style lang="scss">
-@use 'sass:color';
 
+
+@use 'sass:color';
 h1 {
   margin: 5px 0;
   padding: 0.1em 0.3em;
@@ -100,7 +101,6 @@ div.amostras {
     }
   }
 }
-
 
 
 $themes: (
@@ -676,8 +676,8 @@ $themeColors: (
 
       // COR BORDA • Criando classes CSS dinamicamente com as cores para as bordas
       body[theme="#{$themeName}"] .border-#{$colorName}-#{$intisity}, .theme-#{$themeName} .border-#{$colorName}-#{$intisity}{
-        border:         2px solid map-get($borderColor, 'normal') !important;
-        &:hover { border: 2px solid map-get($borderColor, 'hover') !important; }
+        border:         1px solid map-get($borderColor, 'normal') !important;
+        &:hover { border: 1px solid map-get($borderColor, 'hover') !important; }
       }
     }
   }
