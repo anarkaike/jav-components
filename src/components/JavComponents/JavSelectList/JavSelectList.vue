@@ -3,31 +3,41 @@
     <label v-if="props?.label">
       {{props.label ?? 'Escolha'}}
     </label>
+    (({{value}}))
     <q-option-group
-      ripple
-      type="checkbox"
-      unelevated
-      v-bind="props"
-      spread
+      v-model="value"
+      :name="props?.name"
+      :keep-color="props?.keepColor"
+      :type="type"
+      :left-label="props?.leftLabel"
+      :inline="props?.inline??true"
+      :disable="props?.disable"
+      :size="props?.size"
+      :color="props?.color"
+      :options="props.options"
     />
-    <!--      toggle-color="class-toggle-color"-->
-    <!--      toggle-text-color="class-toggle-text-color"-->
   </div>
 </template>
 
 <script setup lang="ts">
+import { EInputOptionsTypes } from 'components/JavComponents/enums';
 import { IJavOption } from 'components/JavComponents/interfaces';
 import { IJavFieldOptions } from 'components/JavComponents/interfaces/IJavFieldOptions';
 import { QOptionGroup } from 'quasar';
+import { computed, ComputedRef } from 'vue';
 
-// const value: ModelRef<string | number | null | undefined> = defineModel();
+const value = defineModel({
+  default: () => [] as Array<IJavOption>,
+  required: true,
+  type: Array<IJavOption>
+});
 const props = withDefaults(defineProps<IJavFieldOptions>(), {
   label: 'Select Padrão',
   value: '',
   options: () => [] as IJavOption[]
 });
 
-
+const type: ComputedRef<'checkbox'|'radio'|'toggle'> = computed(() => props?.type === EInputOptionsTypes.INPUT_CHECKBOX ? 'checkbox' : 'radio');
 // const propsInternal: ComputedRef<QOptionGroup> = computed(() => {
 //   return filterProps(props, Object.keys(QOptionGroup) as (keyof QOptionGroup)[]);
 // })

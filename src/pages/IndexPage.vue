@@ -81,7 +81,7 @@ const fields = [
       default: 1,
       micro: 16
     },
-    type: EInputOptionsTypes.INPUT_CHECKBOX,
+    type: EInputOptionsTypes.INPUT_RADIO,
     info: 'Escolha uma das opções.',
     options: [
       { value: 'a', label: 'A' } as IJavOption,

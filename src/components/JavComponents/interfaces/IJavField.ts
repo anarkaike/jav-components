@@ -5,7 +5,7 @@ export interface IJavField {
   [props: string]: any;
   name?: string,
   size?: EContentSizes,
-  type?: 'input' | 'select' | 'buttonsToggle' | string,
+  type?: 'input' | 'select' | 'buttonsToggle' | 'checkbox' | 'radio' | 'toggle' | string,
   label?: string,
   info?: string,
   required?: string,
@@ -14,6 +14,7 @@ export interface IJavField {
   grid?: number|{[contetSize: string]: number},
   width?: string,
   value?: any,
+  modelValue?: any
   rules?: ValidationRule[],
   icon?: string,
   beforeIcon?: string,
