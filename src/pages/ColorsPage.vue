@@ -1,8 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
 
-
-
       <h1>Amostras de Cores</h1>
       <div class="amostras">
         <div v-for="(theme, iTheme) in themes" v-bind:key="iTheme" :class="`theme-${theme}`">
@@ -21,8 +19,6 @@
         </div>
       </div>
 
-
-
   </q-page>
 </template>
 
@@ -38,14 +34,8 @@ defineOptions({
 });
 </script>
 
-
-
-
-
-
 <style lang="scss">
 @use 'sass:color';
-
 
 h1 {
   margin: 5px 0;
@@ -482,6 +472,7 @@ $themeColors: (
   @return $color;
 }
 
+// COR FUNDO • Função sass para obter a cor para o fundo baseado no nome da cor, tema, intensidade e variação
 @function getBgColor($colorName, $themeName: 'light', $intisity: 1, $variation: 'normal') {
   $colorConfigs:          map-get($themeColors, $colorName);
   $colorConfigByTheme:    map-get($colorConfigs, $themeName);
@@ -545,7 +536,7 @@ $themeColors: (
   @return $bgColor;
 }
 
-
+// COR TEXTO • Função sass para obter a cor para o texto baseado no nome da cor, tema, intensidade e variação
 @function getTextColor($colorName, $themeName: 'light', $intisity: 1, $variation: 'normal') {
   $colorConfigs:          map-get($themeColors, $colorName);
   $colorConfigByTheme:    map-get($colorConfigs, $themeName);
@@ -579,6 +570,7 @@ $themeColors: (
 }
 
 
+// COR BORDA • Função Sass para obter as cores para a borda baseado no nome da cor, tema, intensidade e variação
 @function getBorderColor($colorName, $themeName: 'light', $intisity: 1, $variation: 'normal') {
   $colorConfigs:          map-get($themeColors, $colorName);
   $colorConfigByTheme:    map-get($colorConfigs, $themeName);
@@ -624,14 +616,16 @@ $themeColors: (
   @if $variation == 'hover' {
     $borderColor: if(
         $intisity >= $textColorPointChange,
-        lighten(saturate($borderColor, 50%), 20%),
-        lighten(saturate($borderColor, 50%), 10%)
+        lighten(saturate($borderColor, 10%),20%),
+        lighten(saturate($borderColor, 10%),10%)
     );
   }
 
   @return $borderColor;
 }
 
+// CORES FUNDO, TEXTO E BORDA • Função Sass para retornar todas as cores de fundo, texto e borda e suas variações,
+// baseando o nome da cor, tema e intensidade
 @function getColors($colorName, $themeName: 'light', $intisity: 1) {
   @return (
     bgColor:      (
@@ -644,43 +638,46 @@ $themeColors: (
     ),
     borderColor:  (
       normal: getBorderColor($colorName, $themeName, $intisity),
-      hover:  getTextColor($colorName, $themeName, $intisity, 'hover'),
+      hover:  getBorderColor($colorName, $themeName, $intisity, 'hover'),
     )
   )
 }
 
+
+// Percorrendo os temas light, dark e higth constrast
 @each $themeName, $themeConfigs in $themes {
+
   // Percorrendo todas as cores
   @each $colorName, $colorConfigs in $themeColors {
+
     // Gerando 5 tonalidades para cada cor para cada tema
     @for $intisity from 1 through 5 {
+
+      // Buscando cores levando em consideração cor, tema e intensidade
       $colors: getColors($colorName, $themeName, $intisity);
+      $bgColor:      map-get($colors, 'bgColor');
+      $textColor:    map-get($colors, 'textColor');
+      $borderColor:  map-get($colors, 'borderColor');
 
-      $adjustedBgColor:             getBgColor($colorName, $themeName, $intisity);
-      $adjustedBgColorForHover:     getBgColor($colorName, $themeName, $intisity, 'hover');
-
-      $adjustedTextColor:           getTextColor($colorName, $themeName, $intisity);
-      $adjustedTextColorForHover:   getTextColor($colorName, $themeName, $intisity, 'hover');
-
-      $adjustedBorderColor:         getBorderColor($colorName, $themeName, $intisity);
-      $adjustedBorderColorForHover: getBorderColor($colorName, $themeName, $intisity, 'hover');
-
-      // Criando classes CSS dinamicamente
+      // COR FUNDO • Criando classes CSS dinamicamente com as cores para os fundos
       body[theme="#{$themeName}"] .bg-#{$colorName}-#{$intisity}, .theme-#{$themeName} .bg-#{$colorName}-#{$intisity} {
-        background-color: $adjustedBgColor !important;
-        color:            $adjustedTextColor;
-        &:hover { background-color:  $adjustedBgColorForHover; }
+        background-color: map-get($bgColor, 'normal') !important;
+        color:            map-get($textColor, 'normal');
+
+        &:hover { background-color:   map-get($bgColor, 'hover'); }
       }
 
+      // COR TEXTO • Criando classes CSS dinamicamente com as cores para os textos
       body[theme="#{$themeName}"] .text-#{$colorName}-#{$intisity}, body[theme="#{$themeName}"] .text-#{$colorName}-#{$intisity} *,
       .theme-#{$themeName} .text-#{$colorName}-#{$intisity}, .theme-#{$themeName} .text-#{$colorName}-#{$intisity} * {
-        color:    $adjustedTextColor;
-        &:hover { color: $adjustedTextColorForHover; }
+        color:    map-get($textColor, 'normal');
+        &:hover { color: map-get($textColor, 'hover'); }
       }
 
+      // COR BORDA • Criando classes CSS dinamicamente com as cores para as bordas
       body[theme="#{$themeName}"] .border-#{$colorName}-#{$intisity}, .theme-#{$themeName} .border-#{$colorName}-#{$intisity}{
-        border:         2px solid $adjustedBorderColor !important;
-        &:hover { border: 2px solid $adjustedBorderColorForHover !important; }
+        border:         2px solid map-get($borderColor, 'normal') !important;
+        &:hover { border: 2px solid map-get($borderColor, 'hover') !important; }
       }
     }
   }
