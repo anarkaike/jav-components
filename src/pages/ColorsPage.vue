@@ -8,24 +8,28 @@
         <a style="cursor: pointer;" @click="activeTheme='high-contrast'">Alto Contraste</a>
       </h1>
 
-      <div :class="`theme-${activeTheme}`" style="width: 100%; padding:  50px;">
-        <div class="dk-bg-primary-5 dk-dark-bg-yellow" style="width: 300px; height:  100px; margin-bottom:  50px; margin-top:  50px;">
+    <div class="amostras">
+      <div v-for="(theme, iTheme) in themes" v-bind:key="iTheme" :class="`theme-${theme} colunas`" style="text-align: center;">
+        <h2>{{theme.toUpperCase()}} Theme</h2>
+        <div class="dk-bg-secondary-1 dk-border-secondary-1" style="width: 300px; height:  100px; display: inline-block;">
           Junio de Almeida Vitorino
         </div>
 
-        <div class="dk-text-green">
+        <div class="dk-text-green" style="margin: 20px;">
           Junio de Almeida Vitorino
         </div>
       </div>
+    </div>
+
 
       <div class="amostras">
-        <div v-for="(theme, iTheme) in themes" v-bind:key="iTheme" :class="`theme-${theme}`">
+        <div v-for="(theme, iTheme) in themes" v-bind:key="iTheme" :class="`theme-${theme} colunas`">
           <h2>{{theme.toUpperCase()}} Theme</h2>
-          <div v-for="(color, iColor) in colors" v-bind:key="iColor" class="color-variant">
+          <div v-for="(color, iColor) in colors" v-bind:key="iColor" class="color-variants">
             <div
               v-for="(intensity, iIntensity) in intensities"
               v-bind:key="iIntensity"
-              :class="`dk-bg-${color}${intensity?'-'+intensity:''} dk-border-${color}${intensity?'-'+intensity:''}`"
+              :class="`dk-bg-${color}${intensity?'-'+intensity:''} dk-border-${color}${intensity?'-'+intensity:''} color-intensities`"
             >
               dk-bg-{{color}}{{intensity?'-'+intensity:''}} •
               <strong>dk-text-{{color}}{{intensity?'-'+intensity:''}}</strong> •
@@ -74,7 +78,7 @@ h1 {
 div.amostras {
   width: 100%;
   display: flex;
-  > div {
+  > div.colunas {
     width: calc(100% / 3);
     margin: 2px;
     border: 2px solid #E4E4E4;
@@ -94,12 +98,12 @@ div.amostras {
         color: #FFF;
       }
     }
-    > div {
+    > div.color-variants {
       margin-bottom: 5px;
       border: 1px solid #CCC;
       border-radius: 8px;
       padding: 10px;
-      > div {
+      > div.color-intensities {
         padding: 0.2em 0.5em;
         margin-bottom: 10px;
         font-size: 10px;
