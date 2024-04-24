@@ -5,7 +5,7 @@
     v-model="value"
   />
   <JavSelectList
-    v-if="props?.type==EInputOptionsTypes.INPUT_CHECKBOX || props?.type==EInputOptionsTypes.INPUT_RADIO"
+    v-else-if="props?.type==EInputOptionsTypes.INPUT_CHECKBOX || props?.type==EInputOptionsTypes.INPUT_RADIO"
     v-bind="props"
     v-model="value"
   />

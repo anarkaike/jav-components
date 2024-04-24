@@ -127,8 +127,11 @@ onMounted(() => {
     margin: 0x -1px;
 
     .field {
-      padding-bottom: 2px;
-      margin: 0px 1px;
+      margin: 1px;
+      align-items: stretch;
+      max-height: 100%;
+      background-color: #ededef;
+      border-radius: 5px;
 
       .q-field--dense .q-field__label {
         font-size: 12px;
@@ -141,7 +144,6 @@ onMounted(() => {
         font-size: 0.8em;
         color: rgba(0, 0, 0, 0.5);
         padding: 0px 2px 0px 12px;
-        background-color: #ededef;
 
         .iconify {
           font-size: 15px;
@@ -169,10 +171,12 @@ onMounted(() => {
       }
     }
   }
-
   .footer {
     padding-top: 2px;
     text-align: right;
   }
+}
+.q-field--filled .q-field__control {
+  background-color: transparent;
 }
 </style>

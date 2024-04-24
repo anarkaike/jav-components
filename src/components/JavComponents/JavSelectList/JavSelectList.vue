@@ -3,7 +3,6 @@
     <label v-if="props?.label">
       {{props.label ?? 'Escolha'}}
     </label>
-    (({{value}}))
     <q-option-group
       v-model="value"
       :name="props?.name"
@@ -55,57 +54,26 @@ const type: ComputedRef<'checkbox'|'radio'|'toggle'> = computed(() => props?.typ
     font-size: 12px;
     line-height: 1.5em;
   }
-  .q-btn-group {
-    border: 2px solid #F2F2F2;
+  .q-option-group {
+    border: 2px solid rgba(242, 242, 242, 0.5);
     padding: 2px;
     border-radius: 5px;
     background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     &, * {
       transition: all 0.1s linear;
     }
-    .q-btn-item.q-btn {
+    > div {
       border-left: 2px #ececec solid;
-
-      .q-btn__content {
-        opacity: 0.6;
-      }
-      &:first-of-type {
-        border-left: 0;
-      }
-
-      &:first-of-type {
-        -webkit-border-top-left-radius: 5px;
-        -webkit-border-bottom-left-radius: 5px;
-        -moz-border-radius-topleft: 5px;
-        -moz-border-radius-bottomleft: 5px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-      }
-      &:last-of-type {
-        -webkit-border-top-right-radius: 5px;
-        -webkit-border-bottom-right-radius: 5px;
-        -moz-border-radius-topright: 5px;
-        -moz-border-radius-bottomright: 5px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
-      &.bg-class-toggle-color,
-      &.text-class-toggle-text-color {
-        background-color: var(--q-primary);
-        color: #FFF;
-        .q-btn__content {
-          transform: scale(1.5);
-          opacity: 1;
-        }
+      flex: 1;
+      div[aria-checked="true"] {
+        color: blue;
+        font-weight: bold;
+        transform: scale(1.2);
       }
     }
-  }
-  .form-input-info {
-    text-align: right;
-    font-size: 0.8em;
-    color: rgba(0, 0, 0, 0.5);
-    padding: 0px 2px 0px 12px;
-    background-color: #ededef;
   }
 }
 </style>
