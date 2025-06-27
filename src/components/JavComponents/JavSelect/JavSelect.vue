@@ -8,6 +8,7 @@
     input-debounce="0"
     @filter="methods.filterFn"
     v-bind="props"
+    :options="options"
   >
     <template v-slot:no-option>
       <q-item>
